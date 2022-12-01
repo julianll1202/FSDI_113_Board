@@ -1,0 +1,61 @@
+{% extends 'base.html' %} 
+
+{% block title %}Issue board{% endblock title %} 
+
+{% block content %}
+<h1>Issue Board</h1>
+<div class="issue-board">
+    <section class="to-do">
+        <h3>To Do</h3>
+        <p>Tasks that have not yet been started</p>
+        {% for issue in to_do_list %}
+        <div class="card">
+            <a href="{% url 'detail' issue.id %}" class="detail-link">
+                <div class="card-body">
+                    <h5 class="card-title">{{issue.summary|truncatechars:60}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{issue.priority}}</h6>
+                    <p class="card-text">{{issue.description|truncatechars:120}}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        
+    </section>
+    <section class="in-progress">
+        <h3>In Progress</h3>
+        <p>Tasks that are actively being worked on"</p>
+        {% for issue in in_p_list %}
+        <div class="card">
+            <a href="{% url 'detail' issue.id %}" class="detail-link">
+                <div class="card-body">
+                    <h5 class="card-title">{{issue.summary|truncatechars:60}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{issue.priority}}</h6>
+                    <p class="card-text">{{issue.description|truncatechars:10}}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </section>
+    <section class="done">
+        <h3>Done</h3>
+        <p>Tasks that have been marked as completed</p>
+        {% for issue in done_list %}
+        <div class="card">
+            <a href="{% url 'detail' issue.id %}" class="detail-link">
+                <div class="card-body">
+                    <h5 class="card-title">{{issue.summary|truncatechars:60}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{issue.priority}}</h6>
+                    <p class="card-text">{{issue.description|truncatechars:120}}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </section>
+</div>
+{% endblock content %} 
