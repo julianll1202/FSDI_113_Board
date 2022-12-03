@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
-    'issues'
+    'issues',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,9 @@ STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'

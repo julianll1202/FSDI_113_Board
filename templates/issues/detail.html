@@ -11,6 +11,8 @@
 <p><b>Assignr to: </b>{{issue.assignee}}</p>
 <p><b>Description:</b></p>
 <p>{{issue.description}}</p>
-<a href="{% url 'update_issue' issue.id %}" class="btn btn-info">Edit</a>
-<a href="{% url 'delete_issue' issue.id %}" class="btn btn-danger">Delete</a>
+{% if user.username == issue.reporter.username %}
+<a href="{% url 'update_issue' issue.id %}" class="btn btn-info"><i class="bi bi-pencil-square"></i> Edit</a>
+<a href="{% url 'delete_issue' issue.id %}" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Delete</a>
+{% endif %}
 {% endblock content %}
