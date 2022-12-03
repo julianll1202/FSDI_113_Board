@@ -7,6 +7,9 @@ h1 {
     font-weight: 800;
 }
 
+.intro {
+    text-align: center;
+}
 .issue-board {
     display: flex;
     flex-direction: row;
@@ -22,6 +25,15 @@ h1 {
     font-weight: 800;
 }
 
+/* About */
+.about {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
 /* Issue categories */
 .to-do {
     background-color: #F88F4F;
@@ -46,6 +58,7 @@ h1 {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
     
 }
 
@@ -60,4 +73,14 @@ h1 {
 
 .card:hover {
     border-left: gray 4px solid;
+}
+
+/* Issue details */
+.details {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
 }

@@ -4,15 +4,18 @@
 
 {% block content %}
 <h1>Issue #{{issue.id}}</h1>
-<p><b>Summary: </b>{{issue.summary}}</h3>
-<small>Created on: {{issue.created_on}}</small>
-<p><b>Priority level:</b> {{issue.priority}}</p>
-<p><b>Reported by: </b>{{issue.reporter}}</p>
-<p><b>Assignr to: </b>{{issue.assignee}}</p>
-<p><b>Description:</b></p>
-<p>{{issue.description}}</p>
-{% if user.username == issue.reporter.username %}
-<a href="{% url 'update_issue' issue.id %}" class="btn btn-info"><i class="bi bi-pencil-square"></i> Edit</a>
-<a href="{% url 'delete_issue' issue.id %}" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Delete</a>
-{% endif %}
+<div class="details">
+    <p><b>Summary: </b>{{issue.summary}}</p>
+    <p><b>Created on: </b> {{issue.created_on}}</p>
+    <p><b>Priority level:</b> {{issue.priority}}</p>
+    <p><b>Reported by: </b>{{issue.reporter}}</p>
+    <p><b>Assigned to: </b>{{issue.assignee}}</p>
+    <p><b>Description:</b></p>
+    <p>{{issue.description}}</p>
+    {% if user.username == issue.reporter.username %}
+    <a href="{% url 'update_issue' issue.id %}" class="btn btn-info"><i class="bi bi-pencil-square"></i> Edit</a>
+    <a href="{% url 'delete_issue' issue.id %}" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Delete</a>
+    {% endif %}
+</div>
+
 {% endblock content %}

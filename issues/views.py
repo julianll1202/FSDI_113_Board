@@ -5,6 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Issue, Status
 
 from accounts.models import Role, Team, CustomUser
+
+
 class BoardView(LoginRequiredMixin, ListView):
     template_name = "issues/board.html"
     model = Issue
@@ -31,7 +33,7 @@ class BoardView(LoginRequiredMixin, ListView):
         
         try:
             product_owner = CustomUser.objects.filter(
-            role=role).get(team=team)[0]
+            role=role).filter(team=team)[0]
             self.populate_issue_list("to_do_list", to_do_status, product_owner, context)
             self.populate_issue_list("in_p_list", in_p_status, product_owner, context)
             self.populate_issue_list("done_list", done_status, product_owner, context)
