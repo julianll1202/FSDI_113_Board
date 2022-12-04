@@ -4,9 +4,16 @@
 
 {% block content %}
 <h1>Update Issue #{{issue.id}}</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Update" class="btn btn-success">
-</form>
+<div class="data-forms">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="buttons">
+            <input type="submit" value="Update" class="btn btn-success">
+            <a href="{% url 'detail' issue.id %}" class="btn btn-primary">Cancel</a>
+        </div>
+        
+    </form>
+</div>
+
 {% endblock content %}

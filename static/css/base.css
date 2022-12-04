@@ -84,3 +84,19 @@ h1 {
     padding: 5px;
     border-radius: 5px;
 }
+
+/* Forms */
+.data-forms {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}

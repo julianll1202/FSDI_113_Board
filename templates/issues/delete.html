@@ -4,9 +4,16 @@
 
 {% block content %}
 <h1>Delete Issue</h1>
-<p>Are you sure you want to delete issue #{issue.id}}</p>
-<form method="POST">
-    {% csrf_token %}
-    <input value="Delete" type="submit" class="btn btn-danger">
-</form>
+<div class="data-forms">
+    <p>Are you sure you want to delete issue #{{issue.id}}</p>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="buttons">
+            <input value="Delete" type="submit" class="btn btn-danger">
+            <a href="{% url 'detail' issue.id %}" class="btn btn-primary">Cancel</a>
+        </div>
+        
+    </form>
+</div>
+
 {% endblock content %}

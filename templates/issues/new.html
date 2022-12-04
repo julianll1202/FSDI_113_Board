@@ -4,9 +4,12 @@
 
 {% block content %}
 <h1>New Issue</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Create" class="btn btn-success">
-</form>
+<div class="data-forms">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Create" class="btn btn-success">
+    </form>
+</div>
+
 {% endblock content %}
